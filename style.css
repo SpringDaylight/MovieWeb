@@ -12,6 +12,7 @@ body {
   background: #0f1220;
   color: #eaeaf0;
   line-height: 1.6;
+  padding-bottom: 84px;
 }
 
 header {
@@ -124,26 +125,37 @@ ul li {
 }
 
 /* ===== Navigation ===== */
-nav {
+.bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #12152a;
+  background: rgba(18, 21, 42, 0.96);
   display: flex;
   justify-content: space-around;
-  padding: 12px 0;
+  padding: 10px 16px 14px;
   border-top: 1px solid #22254a;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.25);
 }
 
-nav a {
+.bottom-nav a {
   color: #b6b7c3;
   text-decoration: none;
   font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-nav a:hover {
+.bottom-nav a:hover {
   color: #ffffff;
+  background: #1f223a;
+}
+
+.bottom-nav a.active {
+  color: #ffffff;
+  background: #262a40;
 }
 
 /* ===== Movie Card ===== */
