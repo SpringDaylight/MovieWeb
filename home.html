@@ -19,7 +19,6 @@
     <nav class="top-nav">
       <a href="home.html" class="active" aria-current="page">찾기</a>
       <a href="movies.html">영화</a>
-      <a href="judge.html">판단하기</a>
       <a href="group.html">같이 정하기</a>
       <a href="log.html">남기기</a>
     </nav>
@@ -58,33 +57,39 @@
       <p>당신의 최근 취향을 반영한 추천 리스트</p>
     </div>
     <div class="movie-grid">
-      <article class="card movie-tile">
-        <img class="poster" src="https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg" alt="이터널 선샤인 포스터">
-        <div class="movie-info">
-          <h3>이터널 선샤인</h3>
-          <p class="probability">만족 확률 81%</p>
-          <p class="muted">관계 중심 서사와 여운 있는 결말을 선호하셨어요.</p>
-          <button class="ghost-btn">자세히 보기</button>
-        </div>
-      </article>
-      <article class="card movie-tile">
-        <img class="poster" src="https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg" alt="라라랜드 포스터">
-        <div class="movie-info">
-          <h3>라라랜드</h3>
-          <p class="probability">만족 확률 74%</p>
-          <p class="muted">음악과 성장 서사를 좋아하셨어요.</p>
-          <button class="ghost-btn">자세히 보기</button>
-        </div>
-      </article>
-      <article class="card movie-tile">
-        <img class="poster" src="https://image.tmdb.org/t/p/w500/bgIt92V3IDysoAIcEfOo2ZK9PEv.jpg" alt="인셉션 포스터">
-        <div class="movie-info">
-          <h3>인셉션</h3>
-          <p class="probability">만족 확률 69%</p>
-          <p class="muted">퍼즐형 전개와 강한 몰입감을 선호하셨어요.</p>
-          <button class="ghost-btn">자세히 보기</button>
-        </div>
-      </article>
+      <a class="card-link" href="movie-detail.html">
+        <article class="card movie-tile">
+          <img class="poster" src="https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg" alt="이터널 선샤인 포스터">
+          <div class="movie-info">
+            <h3>이터널 선샤인</h3>
+            <p class="probability">만족 확률 81%</p>
+            <p class="muted">관계 중심 서사와 여운 있는 결말을 선호하셨어요.</p>
+            <span class="ghost-btn">자세히 보기</span>
+          </div>
+        </article>
+      </a>
+      <a class="card-link" href="movie-detail.html">
+        <article class="card movie-tile">
+          <img class="poster" src="https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg" alt="라라랜드 포스터">
+          <div class="movie-info">
+            <h3>라라랜드</h3>
+            <p class="probability">만족 확률 74%</p>
+            <p class="muted">음악과 성장 서사를 좋아하셨어요.</p>
+            <span class="ghost-btn">자세히 보기</span>
+          </div>
+        </article>
+      </a>
+      <a class="card-link" href="movie-detail.html">
+        <article class="card movie-tile">
+          <img class="poster" src="https://image.tmdb.org/t/p/w500/bgIt92V3IDysoAIcEfOo2ZK9PEv.jpg" alt="인셉션 포스터">
+          <div class="movie-info">
+            <h3>인셉션</h3>
+            <p class="probability">만족 확률 69%</p>
+            <p class="muted">퍼즐형 전개와 강한 몰입감을 선호하셨어요.</p>
+            <span class="ghost-btn">자세히 보기</span>
+          </div>
+        </article>
+      </a>
     </div>
   </section>
 
@@ -107,7 +112,6 @@
 <nav class="bottom-nav">
   <a href="home.html" class="active" aria-current="page">홈</a>
   <a href="movies.html">영화</a>
-  <a href="judge.html">영화 판단</a>
   <a href="group.html">같이 보기</a>
   <a href="log.html">감상 기록</a>
 </nav>

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>마이페이지 | 오늘 뭐 볼까?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <a class="brand" href="home.html">
+      <div class="brand-mark">W</div>
+      <div>
+        <p class="brand-title">오늘 뭐 볼까?</p>
+        <p class="brand-sub">취향 기반 영화 탐색</p>
+      </div>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html">찾기</a>
+      <a href="movies.html">영화</a>
+      <a href="group.html">같이 정하기</a>
+      <a href="log.html">남기기</a>
+      <a href="mypage.html" class="active" aria-current="page">마이페이지</a>
+    </nav>
+    <div class="top-actions">
+      <button class="profile-chip">DS</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-title">
+    <h1>마이페이지</h1>
+    <p>내 취향과 기록을 한눈에 확인해요.</p>
+  </section>
+
+  <section class="section card profile-card">
+    <div class="profile-header">
+      <div class="profile-avatar">DS</div>
+      <div>
+        <h2>도슨</h2>
+        <p class="muted">감정선 강한 드라마 · SF를 자주 봐요.</p>
+        <div class="profile-stats">
+          <div>
+            <strong>128</strong>
+            <span>시청작</span>
+          </div>
+          <div>
+            <strong>42</strong>
+            <span>리뷰</span>
+          </div>
+          <div>
+            <strong>16</strong>
+            <span>컬렉션</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>내 영화 보기</h2>
+      <p>포스터 그리드 · 리뷰 목록</p>
+    </div>
+    <div class="view-toggle">
+      <button class="filter-chip active">포스터 그리드</button>
+      <button class="filter-chip">리뷰 목록</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="poster-grid">
+      <img src="https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg" alt="이터널 선샤인 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg" alt="라라랜드 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/bgIt92V3IDysoAIcEfOo2ZK9PEv.jpg" alt="인셉션 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="인터스텔라 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="기생충 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" alt="매트릭스 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg" alt="듄 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt="작은 아씨들 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/bKthjUmxjHjueYrEzdWjQfMArSg.jpg" alt="그녀의 취미생활 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="조커 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/2TeJfUZMGolfDdW6DKhfIWqvq8y.jpg" alt="조커 속편 포스터">
+      <img src="https://image.tmdb.org/t/p/w500/rc7j1oQOMxudcmGeYb5SPbII6e3.jpg" alt="조용한 곳 포스터">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>최근 리뷰</h2>
+      <p>감상 기록에서 가져온 목록</p>
+    </div>
+    <div class="review-list">
+      <article class="card review-card">
+        <div class="movie-tile">
+          <img class="poster" src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" alt="매트릭스 포스터">
+          <div class="movie-info">
+            <h3>매트릭스</h3>
+            <p class="muted">"현실 감각과 선택에 대한 질문이 오래 남았다."</p>
+            <div class="meta-list">
+              <span>2026.02.01</span>
+              <span>여운</span>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="card review-card">
+        <div class="movie-tile">
+          <img class="poster" src="https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg" alt="이터널 선샤인 포스터">
+          <div class="movie-info">
+            <h3>이터널 선샤인</h3>
+            <p class="muted">"관계의 기억을 지우는 선택이 너무 현실적으로 다가왔다."</p>
+            <div class="meta-list">
+              <span>2026.01.26</span>
+              <span>감정선</span>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="card review-card">
+        <div class="movie-tile">
+          <img class="poster" src="https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg" alt="라라랜드 포스터">
+          <div class="movie-info">
+            <h3>라라랜드</h3>
+            <p class="muted">"계절이 바뀔 때마다 음악이 다시 생각났다."</p>
+            <div class="meta-list">
+              <span>2026.01.20</span>
+              <span>로맨스</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="home.html">홈</a>
+  <a href="movies.html">영화</a>
+  <a href="group.html">같이 보기</a>
+  <a href="log.html">감상 기록</a>
+  <a href="mypage.html" class="active" aria-current="page">마이페이지</a>
+</nav>
+
+</body>
+</html>

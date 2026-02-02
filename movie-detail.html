@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>영화 판단 | 오늘 이거 볼까?</title>
+  <title>영화 상세 | 오늘 뭐 볼까?</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +19,6 @@
     <nav class="top-nav">
       <a href="home.html">찾기</a>
       <a href="movies.html">영화</a>
-      <a href="judge.html" class="active" aria-current="page">판단하기</a>
       <a href="group.html">같이 정하기</a>
       <a href="log.html">남기기</a>
     </nav>
@@ -31,15 +30,8 @@
 
 <main class="container">
   <section class="page-title">
-    <h1>이 영화, 내가 좋아할까?</h1>
-    <p>취향 데이터와 유사 취향 시청자 반응을 기반으로 만족도를 예측합니다.</p>
-  </section>
-
-  <section class="section card">
-    <div class="form-grid">
-      <input class="search-input" type="text" placeholder="영화 제목 검색" />
-      <button class="primary-btn">검색</button>
-    </div>
+    <h1>영화 상세</h1>
+    <p>영화를 선택하면 상세 정보와 나와의 적합도를 함께 볼 수 있어요.</p>
   </section>
 
   <section class="section">
@@ -48,13 +40,26 @@
         <img class="poster" src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="인터스텔라 포스터">
         <div class="movie-info">
           <h3>인터스텔라</h3>
-          <p class="probability">예상 만족 확률 83%</p>
-          <p class="muted">우주 스케일의 서사와 감정선의 균형을 좋아하셨어요.</p>
+          <p class="muted">2014 · SF/드라마 · 169분</p>
+          <div class="tag-list" style="margin-top:10px;">
+            <span class="tag">우주</span>
+            <span class="tag">가족</span>
+            <span class="tag">감정선</span>
+          </div>
         </div>
       </div>
 
-      <div class="section" style="margin-top:16px;">
-        <h3>왜 이렇게 예측했나요?</h3>
+      <div class="section" style="margin-top:18px;">
+        <h3>시놉시스</h3>
+        <p class="muted">
+          지구의 식량 위기 속에서 인류를 구할 새로운 거처를 찾기 위해
+          우주로 떠나는 탐사대의 이야기입니다.
+        </p>
+      </div>
+
+      <div class="section" style="margin-top:18px;">
+        <h3>나와의 적합도</h3>
+        <p class="probability">적합 확률 83%</p>
         <ul class="list">
           <li>거대한 세계관과 몰입도 높은 전개를 선호하셨어요.</li>
           <li>가족 서사가 중심인 작품을 좋아하셨어요.</li>
@@ -62,12 +67,15 @@
         </ul>
       </div>
 
-      <div class="section" style="margin-top:16px;">
+      <div class="section" style="margin-top:18px;">
         <h3>주의할 점</h3>
         <p class="muted">후반부 과학 설정이 어렵게 느껴질 수 있어요.</p>
       </div>
 
-      <button class="secondary-btn" style="margin-top:18px;">감상 기록 적기</button>
+      <div class="hero-actions" style="margin-top:18px;">
+        <button class="primary-btn">바로 감상하기</button>
+        <button class="secondary-btn">감상 기록 적기</button>
+      </div>
     </article>
   </section>
 </main>
@@ -75,7 +83,6 @@
 <nav class="bottom-nav">
   <a href="home.html">홈</a>
   <a href="movies.html">영화</a>
-  <a href="judge.html" class="active" aria-current="page">영화 판단</a>
   <a href="group.html">같이 보기</a>
   <a href="log.html">감상 기록</a>
 </nav>
