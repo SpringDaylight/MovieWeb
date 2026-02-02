@@ -63,30 +63,30 @@
       <h2>내 영화 보기</h2>
       <p>포스터 그리드 · 리뷰 목록</p>
     </div>
-    <div class="view-toggle">
-      <button class="filter-chip active">포스터 그리드</button>
-      <button class="filter-chip">리뷰 목록</button>
+    <div class="view-toggle" role="tablist" aria-label="내 영화 보기">
+      <button class="filter-chip active" id="tab-posters" data-view="posters" role="tab" aria-selected="true">포스터 그리드</button>
+      <button class="filter-chip" id="tab-reviews" data-view="reviews" role="tab" aria-selected="false">리뷰 목록</button>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section view-section" data-view="posters">
     <div class="poster-grid">
-      <img src="https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg" alt="이터널 선샤인 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg" alt="라라랜드 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/bgIt92V3IDysoAIcEfOo2ZK9PEv.jpg" alt="인셉션 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="인터스텔라 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="기생충 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" alt="매트릭스 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg" alt="듄 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt="작은 아씨들 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/bKthjUmxjHjueYrEzdWjQfMArSg.jpg" alt="그녀의 취미생활 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="조커 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/2TeJfUZMGolfDdW6DKhfIWqvq8y.jpg" alt="조커 속편 포스터">
-      <img src="https://image.tmdb.org/t/p/w500/rc7j1oQOMxudcmGeYb5SPbII6e3.jpg" alt="조용한 곳 포스터">
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg" alt="이터널 선샤인 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg" alt="라라랜드 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/bgIt92V3IDysoAIcEfOo2ZK9PEv.jpg" alt="인셉션 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="인터스텔라 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="기생충 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" alt="매트릭스 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg" alt="듄 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt="작은 아씨들 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/bKthjUmxjHjueYrEzdWjQfMArSg.jpg" alt="그녀의 취미생활 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="조커 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/2TeJfUZMGolfDdW6DKhfIWqvq8y.jpg" alt="조커 속편 포스터"></a>
+      <a href="movie-detail.html"><img src="https://image.tmdb.org/t/p/w500/rc7j1oQOMxudcmGeYb5SPbII6e3.jpg" alt="조용한 곳 포스터"></a>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section view-section" data-view="reviews">
     <div class="section-header">
       <h2>최근 리뷰</h2>
       <p>감상 기록에서 가져온 목록</p>
@@ -134,6 +134,29 @@
     </div>
   </section>
 </main>
+
+<script>
+  const tabs = document.querySelectorAll('.view-toggle .filter-chip');
+  const sections = document.querySelectorAll('.view-section');
+
+  const setActiveView = (view) => {
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.view === view;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    sections.forEach((section) => {
+      section.classList.toggle('is-hidden', section.dataset.view !== view);
+    });
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => setActiveView(tab.dataset.view));
+  });
+
+  setActiveView('posters');
+</script>
 
 <nav class="bottom-nav">
   <a href="home.html">홈</a>
