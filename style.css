@@ -465,6 +465,14 @@ textarea {
   color: var(--text-subtle);
 }
 
+.profile-link {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
 .view-toggle {
   display: flex;
   gap: 10px;
@@ -546,6 +554,91 @@ textarea {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+.taste-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: center;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #ffffff 0%, #fff6fb 60%, #ffffff 100%);
+  box-shadow: var(--shadow);
+  animation: rise 0.7s ease both;
+}
+
+.taste-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.taste-score {
+  text-align: center;
+  display: grid;
+  gap: 6px;
+}
+
+.score-number {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.taste-chart {
+  display: grid;
+  gap: 12px;
+}
+
+.taste-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.bar {
+  position: relative;
+  height: 10px;
+  background: #f0f0f4;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  position: absolute;
+  inset: 0;
+  width: 60%;
+  background: linear-gradient(90deg, #ff2f6e, #ff7aa4);
+  border-radius: 999px;
+}
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.mood-card {
+  display: grid;
+  gap: 8px;
+}
+
+.meter {
+  height: 8px;
+  background: #f0f0f4;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(90deg, #ff2f6e, #ff7aa4);
 }
 
 .bottom-nav {
