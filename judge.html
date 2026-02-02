@@ -7,42 +7,69 @@
 </head>
 <body>
 
-<header class="header">
-  <h1>이 영화, 만족할까?</h1>
-  <p>바로 지금 만족도 예측해드려요</p>
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <a class="brand" href="home.html">
+      <div class="brand-mark">W</div>
+      <div>
+        <p class="brand-title">오늘 뭐 볼까?</p>
+        <p class="brand-sub">취향 기반 영화 탐색</p>
+      </div>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html">찾기</a>
+      <a href="judge.html" class="active" aria-current="page">판단하기</a>
+      <a href="group.html">같이 정하기</a>
+      <a href="log.html">남기기</a>
+    </nav>
+    <div class="top-actions">
+      <button class="profile-chip">DS</button>
+    </div>
+  </div>
 </header>
 
-<section class="section">
-  <input class="input" type="text" placeholder="영화 제목 검색" />
-  <button class="primary-btn">검색</button>
-</section>
+<main class="container">
+  <section class="page-title">
+    <h1>이 영화, 내가 좋아할까?</h1>
+    <p>취향 데이터와 유사 취향 시청자 반응을 기반으로 만족도를 예측합니다.</p>
+  </section>
 
-<section class="section">
-  <article class="card">
-    <div class="movie-card">
-      <img class="poster"
-        src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
-        alt="인터스텔라 포스터">
-
-      <div class="movie-info">
-        <h2>인터스텔라</h2>
-        <p class="probability">예상 만족 확률 83%</p>
-      </div>
+  <section class="section card">
+    <div class="form-grid">
+      <input class="search-input" type="text" placeholder="영화 제목 검색" />
+      <button class="primary-btn">검색</button>
     </div>
+  </section>
 
-    <h3>왜 이렇게 예측했나요?</h3>
-    <ul class="list">
-      <li>거대한 세계관과 몰입도 높은 전개를 선호하셨어요</li>
-      <li>가족 서사가 중심인 작품을 좋아하셨어요</li>
-      <li>유사 취향 사용자 반응이 긍정적이었어요</li>
-    </ul>
+  <section class="section">
+    <article class="card">
+      <div class="movie-tile">
+        <img class="poster" src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="인터스텔라 포스터">
+        <div class="movie-info">
+          <h3>인터스텔라</h3>
+          <p class="probability">예상 만족 확률 83%</p>
+          <p class="muted">우주 스케일의 서사와 감정선의 균형을 좋아하셨어요.</p>
+        </div>
+      </div>
 
-    <h3>주의할 점</h3>
-    <p>후반부 과학 설정이 어렵게 느껴질 수 있어요</p>
+      <div class="section" style="margin-top:16px;">
+        <h3>왜 이렇게 예측했나요?</h3>
+        <ul class="list">
+          <li>거대한 세계관과 몰입도 높은 전개를 선호하셨어요.</li>
+          <li>가족 서사가 중심인 작품을 좋아하셨어요.</li>
+          <li>유사 취향 사용자 반응이 긍정적이었어요.</li>
+        </ul>
+      </div>
 
-    <button class="secondary-btn">감상 기록 적기</button>
-  </article>
-</section>
+      <div class="section" style="margin-top:16px;">
+        <h3>주의할 점</h3>
+        <p class="muted">후반부 과학 설정이 어렵게 느껴질 수 있어요.</p>
+      </div>
+
+      <button class="secondary-btn" style="margin-top:18px;">감상 기록 적기</button>
+    </article>
+  </section>
+</main>
 
 <nav class="bottom-nav">
   <a href="home.html">홈</a>

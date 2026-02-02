@@ -7,50 +7,76 @@
 </head>
 <body>
 
-<header class="header">
-  <h1>우리 같이 보기</h1>
-  <p>모두 만족할 영화가 있는지 확인해요</p>
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <a class="brand" href="home.html">
+      <div class="brand-mark">W</div>
+      <div>
+        <p class="brand-title">오늘 뭐 볼까?</p>
+        <p class="brand-sub">취향 기반 영화 탐색</p>
+      </div>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html">찾기</a>
+      <a href="judge.html">판단하기</a>
+      <a href="group.html" class="active" aria-current="page">같이 정하기</a>
+      <a href="log.html">남기기</a>
+    </nav>
+    <div class="top-actions">
+      <button class="profile-chip">DS</button>
+    </div>
+  </div>
 </header>
 
-<section class="section">
-  <h2>그룹 선택</h2>
-  <select class="input">
-    <option>개인</option>
-    <option>친구 모임</option>
-    <option>가족</option>
-  </select>
-</section>
+<main class="container">
+  <section class="page-title">
+    <h1>모두가 만족할 영화 찾기</h1>
+    <p>모임 구성원들의 취향을 합쳐 한 번에 정리해드려요.</p>
+  </section>
 
-<section class="section">
-  <h2>영화 선택</h2>
-  <input class="input" type="text" placeholder="영화 제목 입력" />
-  <button class="primary-btn">분석하기</button>
-</section>
-
-<section class="section">
-  <article class="card">
-    <div class="movie-card">
-      <img class="poster"
-        src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
-        alt="기생충 포스터">
-
-      <div class="movie-info">
-        <h2>기생충</h2>
-        <p class="probability">그룹 만족 확률 67%</p>
-      </div>
+  <section class="section card">
+    <div class="form-grid">
+      <label>그룹 선택</label>
+      <select>
+        <option>개인</option>
+        <option>친구 모임</option>
+        <option>가족</option>
+      </select>
+      <label>영화 선택</label>
+      <input type="text" placeholder="영화 제목 입력" />
+      <button class="primary-btn">분석하기</button>
     </div>
+  </section>
 
-    <ul class="list">
-      <li>A님: 매우 만족</li>
-      <li>B님: 무난</li>
-      <li>C님: 다소 지루</li>
-    </ul>
+  <section class="section">
+    <article class="card">
+      <div class="movie-tile">
+        <img class="poster" src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="기생충 포스터">
+        <div class="movie-info">
+          <h3>기생충</h3>
+          <p class="probability">그룹 만족 확률 67%</p>
+          <p class="muted">사회적 메시지와 서스펜스 모두 충족하는 선택지예요.</p>
+        </div>
+      </div>
 
-    <p class="reason">
-      공통적으로 사회적 풍자와 관계 중심 서사를 선호하지만 템포 취향은 다릅니다.
-    </p>
-  </article>
-</section>
+      <div class="section" style="margin-top:16px;">
+        <h3>멤버별 예상 반응</h3>
+        <ul class="list">
+          <li>A님: 매우 만족</li>
+          <li>B님: 무난</li>
+          <li>C님: 다소 지루</li>
+        </ul>
+      </div>
+
+      <div class="section" style="margin-top:16px;">
+        <h3>해석 요약</h3>
+        <p class="muted">공통적으로 사회적 풍자와 관계 중심 서사를 선호하지만, 템포 취향은 다릅니다.</p>
+      </div>
+
+      <button class="secondary-btn" style="margin-top:18px;">대안 영화 보기</button>
+    </article>
+  </section>
+</main>
 
 <nav class="bottom-nav">
   <a href="home.html">홈</a>

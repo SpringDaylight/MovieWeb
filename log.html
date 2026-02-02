@@ -7,44 +7,84 @@
 </head>
 <body>
 
-<header class="header">
-  <h1>내 감상 기록</h1>
-  <p>보고 난 뒤의 감정을 남겨보세요</p>
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <a class="brand" href="home.html">
+      <div class="brand-mark">W</div>
+      <div>
+        <p class="brand-title">오늘 뭐 볼까?</p>
+        <p class="brand-sub">취향 기반 영화 탐색</p>
+      </div>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html">찾기</a>
+      <a href="judge.html">판단하기</a>
+      <a href="group.html">같이 정하기</a>
+      <a href="log.html" class="active" aria-current="page">남기기</a>
+    </nav>
+    <div class="top-actions">
+      <button class="profile-chip">DS</button>
+    </div>
+  </div>
 </header>
 
-<section class="section">
-  <article class="card">
-    <div class="movie-card">
-      <img class="poster"
-        src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
-        alt="매트릭스 포스터">
+<main class="container">
+  <section class="page-title">
+    <h1>내 감상 기록</h1>
+    <p>보고 난 뒤의 감정을 잊지 않도록 남겨보세요.</p>
+  </section>
 
-      <div class="movie-info">
-        <h2>매트릭스</h2>
-        <p class="reason">현실 감각 · 철학적 질문</p>
+  <section class="section">
+    <article class="card">
+      <div class="movie-tile">
+        <img class="poster" src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" alt="매트릭스 포스터">
+        <div class="movie-info">
+          <h3>매트릭스</h3>
+          <p class="muted">현실 감각 · 철학적 질문</p>
+        </div>
       </div>
+
+      <div class="section" style="margin-top:16px;">
+        <div class="form-grid">
+          <label>타임스탬프</label>
+          <input type="text" placeholder="00:42:15" />
+          <label>코멘트</label>
+          <textarea placeholder="이 장면에서 감정이 확 올라왔어요"></textarea>
+        </div>
+        <button class="primary-btn" style="margin-top:12px;">저장</button>
+      </div>
+    </article>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="section-header">
+        <h2>요약 감상</h2>
+        <p>최근 3편의 공통 키워드</p>
+      </div>
+      <p class="muted">이번 감상에서 <strong>현실과 선택</strong>에 대한 고민이 가장 강하게 남았어요.</p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>최근 기록</h2>
+      <p>감정 포인트로 다시 보기</p>
     </div>
-
-    <label>타임스탬프</label>
-    <input class="input" type="text" placeholder="00:42:15" />
-
-    <label>코멘트</label>
-    <textarea class="input" rows="4"
-      placeholder="이 장면에서 감정이 확 올라왔어요"></textarea>
-
-    <button class="primary-btn">저장</button>
-  </article>
-</section>
-
-<section class="section">
-  <article class="card">
-    <h2>요약 감상</h2>
-    <p>
-      이번 감상에서 <strong>현실과 선택</strong>에 대한 고민이
-      가장 강하게 남았어요.
-    </p>
-  </article>
-</section>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <h3>00:42:15</h3>
+        <p class="muted">"이 장면에서 감정이 확 올라왔어요"</p>
+        <span class="tag" style="margin-top:10px; display:inline-block;">강렬함</span>
+      </article>
+      <article class="feature-card">
+        <h3>01:12:03</h3>
+        <p class="muted">"선택의 순간이 오래 남았어요"</p>
+        <span class="tag" style="margin-top:10px; display:inline-block;">여운</span>
+      </article>
+    </div>
+  </section>
+</main>
 
 <nav class="bottom-nav">
   <a href="home.html">홈</a>
