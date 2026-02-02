@@ -361,6 +361,51 @@ textarea {
   color: var(--text-subtle);
 }
 
+.filter-group {
+  display: grid;
+  gap: 16px;
+}
+
+.filter-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-subtle);
+  margin-bottom: 8px;
+}
+
+.filter-chip {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--text-subtle);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filter-chip.active {
+  background: var(--accent-soft);
+  border-color: rgba(255, 47, 110, 0.3);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--text-subtle);
+  font-size: 0.82rem;
+}
+
+.meta-list span {
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+}
+
 .bottom-nav {
   position: fixed;
   bottom: 0;
