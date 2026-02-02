@@ -490,6 +490,50 @@ textarea {
   gap: 16px;
 }
 
+.review-card {
+  display: grid;
+  gap: 12px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.review-name {
+  font-weight: 600;
+}
+
+.review-text {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.review-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .bottom-nav {
   position: fixed;
   bottom: 0;
