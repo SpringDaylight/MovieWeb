@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>프로필 | 오늘 뭐 볼까?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <a class="brand" href="home.html">
+      <div class="brand-mark">W</div>
+      <div>
+        <p class="brand-title">오늘 뭐 볼까?</p>
+        <p class="brand-sub">취향 기반 영화 탐색</p>
+      </div>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html">찾기</a>
+      <a href="movies.html">영화</a>
+      <a href="group.html">같이 정하기</a>
+      <a href="activity.html">내 활동</a>
+    </nav>
+    <div class="top-actions">
+      <a class="profile-chip" href="login.html" data-profile-link>DS</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-title">
+    <h1>프로필</h1>
+    <p>프로필과 설정을 관리해요.</p>
+  </section>
+
+  <section class="section card profile-card">
+    <div class="profile-header">
+      <div class="profile-avatar" id="profile-avatar">DS</div>
+      <div class="profile-info">
+        <div class="profile-header-row">
+          <h2 id="profile-name">도슨</h2>
+          <button class="icon-btn" id="settings-open" aria-label="설정 열기">⚙</button>
+        </div>
+        <p class="muted" id="profile-bio">감정선 강한 드라마 · SF를 자주 봐요.</p>
+        <div class="profile-meta">
+          <div>
+            <span class="muted">닉네임</span>
+            <strong id="profile-nickname">도슨</strong>
+          </div>
+          <div>
+            <span class="muted">이름</span>
+            <strong id="profile-realname">도현</strong>
+          </div>
+          <div>
+            <span class="muted">나이대</span>
+            <strong id="profile-age">20대</strong>
+          </div>
+          <div>
+            <span class="muted">성별</span>
+            <strong id="profile-gender">남성</strong>
+          </div>
+          <div>
+            <span class="muted">아이디</span>
+            <strong id="profile-id">watched_01</strong>
+          </div>
+          <div>
+            <span class="muted">이메일</span>
+            <strong id="profile-email">you@example.com</strong>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <button class="secondary-btn" id="profile-edit-btn">프로필 수정</button>
+          <button class="secondary-btn" id="password-btn">비밀번호 변경</button>
+          <button class="ghost-btn" id="profile-logout-btn">로그아웃</button>
+        </div>
+        <div class="profile-edit is-hidden" id="profile-edit">
+          <label for="profile-nickname-input">닉네임</label>
+          <input id="profile-nickname-input" type="text" value="도슨" />
+          <label for="profile-name-input">이름</label>
+          <input id="profile-name-input" type="text" value="도현" />
+          <label for="profile-age-input">나이대</label>
+          <select id="profile-age-input">
+            <option>10대</option>
+            <option selected>20대</option>
+            <option>30대</option>
+            <option>40대</option>
+            <option>50대+</option>
+          </select>
+          <label for="profile-gender-input">성별</label>
+          <select id="profile-gender-input">
+            <option selected>남성</option>
+            <option>여성</option>
+            <option>선택 안 함</option>
+          </select>
+          <label for="profile-id-input">아이디</label>
+          <input id="profile-id-input" type="text" value="watched_01" />
+          <label for="profile-email-input">이메일</label>
+          <input id="profile-email-input" type="email" value="you@example.com" />
+          <label for="profile-bio-input">한 줄 소개</label>
+          <textarea id="profile-bio-input">감정선 강한 드라마 · SF를 자주 봐요.</textarea>
+          <div class="profile-edit-actions">
+            <button class="primary-btn" id="profile-save-btn">저장</button>
+            <button class="ghost-btn" id="profile-cancel-btn">취소</button>
+          </div>
+        </div>
+        <div class="profile-edit is-hidden" id="password-edit">
+          <label for="password-current">현재 비밀번호</label>
+          <input id="password-current" type="password" placeholder="••••••••" />
+          <label for="password-next">새 비밀번호</label>
+          <input id="password-next" type="password" placeholder="••••••••" />
+          <label for="password-confirm">새 비밀번호 확인</label>
+          <input id="password-confirm" type="password" placeholder="••••••••" />
+          <div class="profile-edit-actions">
+            <button class="primary-btn" id="password-save-btn">변경</button>
+            <button class="ghost-btn" id="password-cancel-btn">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal is-hidden" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+  <div class="modal-overlay" id="settings-overlay"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="settings-title">설정</h2>
+      <button class="icon-btn" id="settings-close" aria-label="설정 닫기">✕</button>
+    </div>
+
+    <div class="modal-section">
+      <h3>마케팅 정보</h3>
+      <div class="toggle-row">
+        <span>마케팅 정보 수신</span>
+        <label class="toggle">
+          <input type="checkbox" checked>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h3>공개 설정</h3>
+      <div class="toggle-row">
+        <span>내 프로필 공개</span>
+        <label class="toggle">
+          <input type="checkbox" checked>
+          <span></span>
+        </label>
+      </div>
+      <div class="toggle-row">
+        <span>리뷰 공개</span>
+        <label class="toggle">
+          <input type="checkbox" checked>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h3>SNS 연동 설정</h3>
+      <div class="sns-grid">
+        <button class="sns-chip">카카오</button>
+        <button class="sns-chip">구글</button>
+        <button class="sns-chip">X</button>
+        <button class="sns-chip">애플</button>
+        <button class="sns-chip">라인</button>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h3>서비스 설정</h3>
+      <div class="select-row">
+        <span>언어</span>
+        <select>
+          <option selected>한국어</option>
+          <option>English</option>
+          <option>日本語</option>
+        </select>
+      </div>
+      <div class="select-row">
+        <span>국가 및 지역</span>
+        <select>
+          <option selected>대한민국</option>
+          <option>일본</option>
+          <option>미국</option>
+        </select>
+      </div>
+      <div class="toggle-row">
+        <span>홈 화면에서 지금 뜨는 코멘트 숨기기</span>
+        <label class="toggle">
+          <input type="checkbox">
+          <span></span>
+        </label>
+      </div>
+      <div class="toggle-row">
+        <span>다크모드</span>
+        <label class="toggle">
+          <input type="checkbox">
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h3>고객센터</h3>
+      <div class="link-list">
+        <button class="ghost-btn">문의하기 / FAQ</button>
+        <button class="ghost-btn">DB 수정/추가 요청하기</button>
+        <button class="ghost-btn">공지사항</button>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="secondary-btn" id="logout-btn">로그아웃</button>
+      <button class="ghost-btn danger" id="delete-btn">탈퇴하기</button>
+    </div>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <a href="home.html">홈</a>
+  <a href="movies.html">영화</a>
+  <a href="group.html">같이 보기</a>
+  <a href="activity.html">내 활동</a>
+</nav>
+
+<script>
+  const profileLink = document.querySelector('[data-profile-link]');
+  const isLoggedIn = localStorage.getItem('mw_logged_in') === 'true';
+  if (profileLink) {
+    profileLink.textContent = isLoggedIn ? 'DS' : '로그인';
+    profileLink.setAttribute('href', isLoggedIn ? 'profile.html' : 'login.html');
+  }
+  const savedNameForChip = localStorage.getItem('mw_profile_name');
+  if (savedNameForChip && profileLink) {
+    profileLink.textContent = savedNameForChip.slice(0, 2);
+  }
+
+  const profileName = document.getElementById('profile-name');
+  const profileBio = document.getElementById('profile-bio');
+  const profileAvatar = document.getElementById('profile-avatar');
+  const profileNickname = document.getElementById('profile-nickname');
+  const profileRealname = document.getElementById('profile-realname');
+  const profileAge = document.getElementById('profile-age');
+  const profileGender = document.getElementById('profile-gender');
+  const profileId = document.getElementById('profile-id');
+  const profileEmail = document.getElementById('profile-email');
+  const editWrap = document.getElementById('profile-edit');
+  const passwordWrap = document.getElementById('password-edit');
+  const editBtn = document.getElementById('profile-edit-btn');
+  const passwordBtn = document.getElementById('password-btn');
+  const saveBtn = document.getElementById('profile-save-btn');
+  const cancelBtn = document.getElementById('profile-cancel-btn');
+  const passwordSaveBtn = document.getElementById('password-save-btn');
+  const passwordCancelBtn = document.getElementById('password-cancel-btn');
+  const nameInput = document.getElementById('profile-name-input');
+  const nicknameInput = document.getElementById('profile-nickname-input');
+  const ageInput = document.getElementById('profile-age-input');
+  const genderInput = document.getElementById('profile-gender-input');
+  const idInput = document.getElementById('profile-id-input');
+  const emailInput = document.getElementById('profile-email-input');
+  const bioInput = document.getElementById('profile-bio-input');
+
+  const savedName = localStorage.getItem('mw_profile_name');
+  const savedBio = localStorage.getItem('mw_profile_bio');
+  const savedNickname = localStorage.getItem('mw_profile_nickname');
+  const savedRealname = localStorage.getItem('mw_profile_realname');
+  const savedAge = localStorage.getItem('mw_profile_age');
+  const savedGender = localStorage.getItem('mw_profile_gender');
+  const savedId = localStorage.getItem('mw_profile_id');
+  const savedEmail = localStorage.getItem('mw_profile_email');
+
+  if (savedName) {
+    profileName.textContent = savedName;
+    profileAvatar.textContent = savedName.slice(0, 2);
+  }
+  if (savedNickname) {
+    profileNickname.textContent = savedNickname;
+    nicknameInput.value = savedNickname;
+  }
+  if (savedRealname) {
+    profileRealname.textContent = savedRealname;
+    nameInput.value = savedRealname;
+  }
+  if (savedAge) {
+    profileAge.textContent = savedAge;
+    ageInput.value = savedAge;
+  }
+  if (savedGender) {
+    profileGender.textContent = savedGender;
+    genderInput.value = savedGender;
+  }
+  if (savedId) {
+    profileId.textContent = savedId;
+    idInput.value = savedId;
+  }
+  if (savedEmail) {
+    profileEmail.textContent = savedEmail;
+    emailInput.value = savedEmail;
+  }
+  if (savedBio) {
+    profileBio.textContent = savedBio;
+    bioInput.value = savedBio;
+  }
+
+  editBtn.addEventListener('click', () => {
+    editWrap.classList.remove('is-hidden');
+    passwordWrap.classList.add('is-hidden');
+  });
+
+  passwordBtn.addEventListener('click', () => {
+    passwordWrap.classList.remove('is-hidden');
+    editWrap.classList.add('is-hidden');
+  });
+
+  saveBtn.addEventListener('click', () => {
+    const nextNickname = nicknameInput.value.trim() || '도슨';
+    const nextRealname = nameInput.value.trim() || '도현';
+    const nextAge = ageInput.value || '20대';
+    const nextGender = genderInput.value || '남성';
+    const nextId = idInput.value.trim() || 'watched_01';
+    const nextEmail = emailInput.value.trim() || 'you@example.com';
+    const nextBio = bioInput.value.trim() || '감정선 강한 드라마 · SF를 자주 봐요.';
+    localStorage.setItem('mw_profile_nickname', nextNickname);
+    localStorage.setItem('mw_profile_realname', nextRealname);
+    localStorage.setItem('mw_profile_age', nextAge);
+    localStorage.setItem('mw_profile_gender', nextGender);
+    localStorage.setItem('mw_profile_id', nextId);
+    localStorage.setItem('mw_profile_email', nextEmail);
+    localStorage.setItem('mw_profile_name', nextNickname);
+    localStorage.setItem('mw_profile_bio', nextBio);
+    profileNickname.textContent = nextNickname;
+    profileRealname.textContent = nextRealname;
+    profileAge.textContent = nextAge;
+    profileGender.textContent = nextGender;
+    profileId.textContent = nextId;
+    profileEmail.textContent = nextEmail;
+    profileName.textContent = nextNickname;
+    profileBio.textContent = nextBio;
+    profileAvatar.textContent = nextNickname.slice(0, 2);
+    editWrap.classList.add('is-hidden');
+  });
+
+  cancelBtn.addEventListener('click', () => {
+    nicknameInput.value = profileNickname.textContent;
+    nameInput.value = profileRealname.textContent;
+    ageInput.value = profileAge.textContent;
+    genderInput.value = profileGender.textContent;
+    idInput.value = profileId.textContent;
+    emailInput.value = profileEmail.textContent;
+    bioInput.value = profileBio.textContent;
+    editWrap.classList.add('is-hidden');
+  });
+
+  passwordSaveBtn.addEventListener('click', () => {
+    passwordWrap.classList.add('is-hidden');
+  });
+
+  passwordCancelBtn.addEventListener('click', () => {
+    passwordWrap.classList.add('is-hidden');
+  });
+
+  const settingsOpen = document.getElementById('settings-open');
+  const settingsModal = document.getElementById('settings-modal');
+  const settingsClose = document.getElementById('settings-close');
+  const settingsOverlay = document.getElementById('settings-overlay');
+
+  const openSettings = () => settingsModal.classList.remove('is-hidden');
+  const closeSettings = () => settingsModal.classList.add('is-hidden');
+
+  settingsOpen.addEventListener('click', openSettings);
+  settingsClose.addEventListener('click', closeSettings);
+  settingsOverlay.addEventListener('click', closeSettings);
+
+  const logoutBtn = document.getElementById('logout-btn');
+  const profileLogoutBtn = document.getElementById('profile-logout-btn');
+  const deleteBtn = document.getElementById('delete-btn');
+
+  const handleLogout = () => {
+    localStorage.setItem('mw_logged_in', 'false');
+    window.location.href = 'login.html';
+  };
+
+  logoutBtn.addEventListener('click', handleLogout);
+  profileLogoutBtn.addEventListener('click', handleLogout);
+
+  deleteBtn.addEventListener('click', () => {
+    localStorage.removeItem('mw_logged_in');
+    localStorage.removeItem('mw_profile_name');
+    localStorage.removeItem('mw_profile_bio');
+    window.location.href = 'login.html';
+  });
+</script>
+
+</body>
+</html>
+

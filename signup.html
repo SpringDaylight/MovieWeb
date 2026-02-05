@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>회원가입 | 오늘 뭐 볼까?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <a class="brand" href="home.html">
+      <div class="brand-mark">W</div>
+      <div>
+        <p class="brand-title">오늘 뭐 볼까?</p>
+        <p class="brand-sub">취향 기반 영화 탐색</p>
+      </div>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html">찾기</a>
+      <a href="movies.html">영화</a>
+      <a href="group.html">같이 정하기</a>
+      <a href="activity.html">내 활동</a>
+    </nav>
+    <div class="top-actions">
+      <a class="profile-chip" href="login.html" data-profile-link>로그인</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-title">
+    <h1>회원가입</h1>
+    <p>지금은 데모 모드입니다. 입력 후 바로 로그인됩니다.</p>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <div class="form-grid">
+        <label for="signup-name">이름</label>
+        <input id="signup-name" type="text" placeholder="도슨" />
+        <label for="signup-email">이메일</label>
+        <input id="signup-email" type="email" placeholder="you@example.com" />
+        <label for="signup-password">비밀번호</label>
+        <input id="signup-password" type="password" placeholder="••••••••" />
+        <label for="signup-confirm">비밀번호 확인</label>
+        <input id="signup-confirm" type="password" placeholder="••••••••" />
+        <button class="primary-btn" id="signup-btn">회원가입</button>
+      </div>
+      <p class="auth-link">이미 계정이 있나요? <a href="login.html">로그인</a></p>
+    </article>
+  </section>
+</main>
+
+<nav class="bottom-nav">
+  <a href="home.html">홈</a>
+  <a href="movies.html">영화</a>
+  <a href="group.html">같이 보기</a>
+  <a href="activity.html">내 활동</a>
+</nav>
+
+<script>
+  const signupBtn = document.getElementById('signup-btn');
+  const nameInput = document.getElementById('signup-name');
+
+  signupBtn.addEventListener('click', () => {
+    const nameValue = nameInput.value.trim();
+    if (nameValue) {
+      localStorage.setItem('mw_profile_name', nameValue);
+      localStorage.setItem('mw_profile_bio', '감정선 강한 드라마 · SF를 자주 봐요.');
+    }
+    localStorage.setItem('mw_logged_in', 'true');
+    window.location.href = 'profile.html';
+  });
+
+  const profileLink = document.querySelector('[data-profile-link]');
+  const isLoggedIn = localStorage.getItem('mw_logged_in') === 'true';
+  if (profileLink) {
+    profileLink.textContent = isLoggedIn ? 'DS' : '로그인';
+    profileLink.setAttribute('href', isLoggedIn ? 'profile.html' : 'login.html');
+  }
+</script>
+
+</body>
+</html>
+

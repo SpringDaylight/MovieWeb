@@ -20,10 +20,10 @@
       <a href="home.html">찾기</a>
       <a href="movies.html">영화</a>
       <a href="group.html" class="active" aria-current="page">같이 정하기</a>
-      <a href="mypage.html">마이페이지</a>
+      <a href="activity.html">내 활동</a>
     </nav>
     <div class="top-actions">
-      <button class="profile-chip">DS</button>
+      <a class="profile-chip" href="login.html" data-profile-link>DS</a>
     </div>
   </div>
 </header>
@@ -82,8 +82,18 @@
   <a href="home.html">홈</a>
   <a href="movies.html">영화</a>
   <a href="group.html" class="active" aria-current="page">같이 보기</a>
-  <a href="mypage.html">마이페이지</a>
+  <a href="activity.html">내 활동</a>
 </nav>
 
+<script>
+  const profileLink = document.querySelector('[data-profile-link]');
+  const isLoggedIn = localStorage.getItem('mw_logged_in') === 'true';
+  if (profileLink) {
+    profileLink.textContent = isLoggedIn ? 'DS' : '로그인';
+    profileLink.setAttribute('href', isLoggedIn ? 'profile.html' : 'login.html');
+  }
+</script>
 </body>
 </html>
+
+

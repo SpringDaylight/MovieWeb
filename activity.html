@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>마이페이지 | 오늘 뭐 볼까?</title>
+  <title>내 활동 | 오늘 뭐 볼까?</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,43 +20,61 @@
       <a href="home.html">찾기</a>
       <a href="movies.html">영화</a>
       <a href="group.html">같이 정하기</a>
-      <a href="mypage.html" class="active" aria-current="page">마이페이지</a>
+      <a href="activity.html" class="active" aria-current="page">내 활동</a>
     </nav>
     <div class="top-actions">
-      <button class="profile-chip">DS</button>
+      <a class="profile-chip" href="login.html" data-profile-link>DS</a>
     </div>
   </div>
 </header>
 
 <main class="container">
   <section class="page-title">
-    <h1>마이페이지</h1>
-    <p>내 취향과 기록을 한눈에 확인해요.</p>
+    <h1>내 활동</h1>
+    <p>내가 본 영화와 남긴 리뷰를 관리해요.</p>
   </section>
 
-  <section class="section card profile-card">
-    <div class="profile-header">
-      <div class="profile-avatar">DS</div>
+  <section class="section card">
+    <div class="section-header">
+      <h2>활동 요약</h2>
+      <p>시청/리뷰/컬렉션 현황</p>
+    </div>
+    <div class="activity-stats">
       <div>
-        <h2>도슨</h2>
-        <p class="muted">감정선 강한 드라마 · SF를 자주 봐요.</p>
-        <div class="profile-stats">
-          <div>
-            <strong>128</strong>
-            <span>시청작</span>
-          </div>
-          <div>
-            <strong>42</strong>
-            <span>리뷰</span>
-          </div>
-          <div>
-            <strong>16</strong>
-            <span>컬렉션</span>
-          </div>
-        </div>
-        <a class="secondary-btn profile-link" href="taste-analysis.html">취향 분석 보기</a>
+        <strong>128</strong>
+        <span>시청작</span>
+      </div>
+      <div>
+        <strong>42</strong>
+        <span>리뷰</span>
+      </div>
+      <div>
+        <strong>16</strong>
+        <span>컬렉션</span>
       </div>
     </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>취향 분석 대시보드</h2>
+      <p>최근 평가 기반 요약</p>
+    </div>
+    <article class="card taste-preview">
+      <div>
+        <p class="muted">선호 키워드</p>
+        <div class="tag-list" style="margin-top:8px;">
+          <span class="tag">감정선</span>
+          <span class="tag">몰입</span>
+          <span class="tag">여운</span>
+        </div>
+      </div>
+      <div>
+        <p class="muted">가장 높은 장르</p>
+        <p class="probability">드라마 · SF</p>
+      </div>
+      <a class="secondary-btn" href="taste-analysis.html">자세히 보기</a>
+    </article>
   </section>
 
   <section class="section">
@@ -163,14 +181,27 @@
   });
 
   setActiveView('posters');
+
+  const profileLink = document.querySelector('[data-profile-link]');
+  const isLoggedIn = localStorage.getItem('mw_logged_in') === 'true';
+  if (profileLink) {
+    profileLink.textContent = isLoggedIn ? 'DS' : '로그인';
+    profileLink.setAttribute('href', isLoggedIn ? 'profile.html' : 'login.html');
+  }
+
+  const savedName = localStorage.getItem('mw_profile_name');
+  if (savedName && profileLink) {
+    profileLink.textContent = savedName.slice(0, 2);
+  }
 </script>
 
 <nav class="bottom-nav">
   <a href="home.html">홈</a>
   <a href="movies.html">영화</a>
   <a href="group.html">같이 보기</a>
-  <a href="mypage.html" class="active" aria-current="page">마이페이지</a>
+  <a href="activity.html" class="active" aria-current="page">내 활동</a>
 </nav>
 
 </body>
 </html>
+
